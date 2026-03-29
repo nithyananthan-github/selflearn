@@ -30,25 +30,31 @@ function Practice() {
 
   if (showResult) {
     return (
-      <Result
-        score={score}
-        total={questions.length}
-        onRestart={restartQuiz}
-      />
+      <div className="app-container">
+        <div className="card">
+          <Result
+            score={score}
+            total={questions.length}
+            onRestart={restartQuiz}
+          />
+        </div>
+      </div>
     );
   }
 
   return (
-    <div>
-      <h1>Practice Page</h1>
-      <p>
-        Question {currentQuestionIndex + 1} of {questions.length}
-      </p>
+    <div className="app-container">
+      <div className="card">
+        <h1>Practice Page</h1>
+        <p>
+          Question {currentQuestionIndex + 1} of {questions.length}
+        </p>
 
-      <QuestionCard
-        question={questions[currentQuestionIndex]}
-        onAnswerSubmit={handleAnswerSubmit}
-      />
+        <QuestionCard
+          question={questions[currentQuestionIndex]}
+          onAnswerSubmit={handleAnswerSubmit}
+        />
+      </div>
     </div>
   );
 }
